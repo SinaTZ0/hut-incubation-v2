@@ -1,0 +1,14 @@
+.section { padding-block: clamp(5rem, 10vw, 9rem); border-block-start: 1px solid var(--line); }
+.heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-block-end: 3.5rem; }
+.list { display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--line-strong); }
+.list article { position: relative; display: grid; grid-template-columns: 0.85fr 1.15fr; min-height: 22rem; border-inline-start: 1px solid var(--line-strong); overflow: hidden; }
+.list article:first-child { border-inline-start: 0; }
+.portrait { position: relative; display: grid; place-items: end center; min-width: 0; background: linear-gradient(155deg, color-mix(in srgb, var(--portrait) 68%, #e8e1d3), var(--portrait)); overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% 92%, 12% 100%, 0 85%); }
+.portrait::before { content: ''; position: absolute; width: 70%; aspect-ratio: 1; inset: 17% auto auto 15%; background: color-mix(in srgb, var(--paper) 35%, transparent); border-radius: 50%; box-shadow: 0 7rem 0 1.4rem color-mix(in srgb, var(--ink) 65%, var(--portrait)); }
+.portrait span { position: relative; z-index: 2; margin-block-end: 1.2rem; color: color-mix(in srgb, white 80%, transparent); font-size: 0.75rem; }
+.info { padding: 1.5rem 1.25rem; display: flex; flex-direction: column; }
+.index { color: var(--brass); font: 400 0.7rem/1 sans-serif; margin-block-end: auto; }
+.info h3 { color: var(--ink); font-size: 1rem; margin: 1.6rem 0 0.35rem; }.info > p { color: var(--muted); font-size: 0.7rem; line-height: 1.7; margin: 0 0 1.3rem; }
+.info dl { margin: 0; display: grid; gap: 0.6rem; }.info dl div { display: grid; gap: 0.25rem; padding-block-start: 0.6rem; border-block-start: 1px solid var(--line); }.info dt { color: var(--muted); font-size: 0.58rem; }.info dd { margin: 0; color: var(--turquoise-deep); font-size: 0.7rem; font-weight: 750; }
+@media (max-width: 950px) { .list { grid-template-columns: 1fr; }.list article { border-inline-start: 0; border-block-end: 1px solid var(--line-strong); min-height: 18rem; grid-template-columns: minmax(9rem, 0.7fr) 1.3fr; }.info { padding: 1.5rem 2rem; } }
+@media (max-width: 580px) { .heading { align-items: start; flex-direction: column; }.list article { grid-template-columns: 0.85fr 1.15fr; }.info { padding: 1rem; }.info h3 { font-size: 0.88rem; } }

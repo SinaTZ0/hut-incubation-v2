@@ -1,0 +1,24 @@
+.intro { max-width: 35rem; }
+.center { margin-inline: auto; text-align: center; }
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--turquoise-deep);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin-block-end: 1rem;
+}
+.eyebrow::before { content: ''; width: 1.5rem; height: 1px; background: var(--brass); }
+.intro h2 {
+  font-size: var(--section-title);
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+  margin: 0;
+  color: var(--ink);
+}
+.intro p { color: var(--muted); line-height: 2; margin-block: 1rem 0; }
+.light h2 { color: var(--paper); }
+.light p { color: color-mix(in srgb, var(--paper) 68%, transparent); }
+.light .eyebrow { color: #71c5b9; }

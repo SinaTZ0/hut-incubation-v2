@@ -1,0 +1,13 @@
+.section { position: relative; overflow: hidden; padding-block: clamp(5rem, 9vw, 8rem); color: var(--paper); background: var(--ink); }
+.section::before { content: ''; position: absolute; width: 28rem; aspect-ratio: 1; inset: -14rem auto auto -8rem; border: 1px solid color-mix(in srgb, var(--brass) 18%, transparent); border-radius: 50%; box-shadow: 0 0 0 3rem color-mix(in srgb, var(--brass) 3%, transparent), 0 0 0 6rem color-mix(in srgb, var(--brass) 2%, transparent); }
+.statement { display: grid; grid-template-columns: 0.55fr 1.4fr 0.75fr; gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+.statement > span { color: var(--brass); font-size: 0.75rem; font-weight: 800; padding-block-start: 0.8rem; }
+.statement h2 { margin: 0; font-size: clamp(2.1rem, 4.2vw, 4.25rem); line-height: 1.45; letter-spacing: -0.045em; }
+.statement h2 em { color: #7cc7ba; font-style: normal; }
+.statement p { margin: 0; color: color-mix(in srgb, var(--paper) 64%, transparent); line-height: 2; font-size: 0.88rem; padding-block-start: 0.7rem; }
+.principles { display: grid; grid-template-columns: repeat(3, 1fr); margin-block-start: clamp(4rem, 8vw, 7rem); border-block-start: 1px solid color-mix(in srgb, var(--paper) 15%, transparent); }
+.principles article { display: grid; grid-template-columns: auto 1fr; gap: 1rem; padding: 1.8rem clamp(1rem, 3vw, 2.5rem); border-inline-start: 1px solid color-mix(in srgb, var(--paper) 15%, transparent); }
+.principles article:first-child { border-inline-start: 0; }
+.principles article > span { color: var(--brass); font: 400 0.72rem/1 sans-serif; padding-block-start: 0.3rem; }
+.principles h3 { margin: 0 0 0.45rem; font-size: 1rem; }.principles p { margin: 0; color: color-mix(in srgb, var(--paper) 58%, transparent); line-height: 1.8; font-size: 0.76rem; }
+@media (max-width: 800px) { .statement { grid-template-columns: 1fr; gap: 1.2rem; }.statement p { max-width: 32rem; }.principles { grid-template-columns: 1fr; }.principles article { border-inline-start: 0; border-block-end: 1px solid color-mix(in srgb, var(--paper) 15%, transparent); padding-inline: 0; } }

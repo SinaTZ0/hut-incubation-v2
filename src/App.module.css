@@ -1,0 +1,3 @@
+.app { min-height: 100svh; overflow: clip; }
+.skipLink { position: fixed; z-index: 100; inset: 0.8rem auto auto 50%; transform: translate(-50%, -200%); padding: 0.7rem 1rem; color: white; background: var(--ink); border: 2px solid var(--brass); text-decoration: none; transition: transform 150ms ease; }
+.skipLink:focus { transform: translate(-50%, 0); }
