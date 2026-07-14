@@ -7,6 +7,7 @@ import { ProgramTracks } from './components/sections/ProgramTracks'
 import { ResourceBridge } from './components/sections/ResourceBridge'
 import { SiteFooter } from './components/sections/SiteFooter'
 import { SiteHeader } from './components/sections/SiteHeader'
+import { StationedTeamsSection } from './components/sections/StationedTeamsSection'
 import { TrackRecord } from './components/sections/TrackRecord'
 import styles from './App.module.css'
 
@@ -21,6 +22,7 @@ function App() {
         <ProgramTracks />
         <FounderPath />
         <LabShowcase />
+        <StationedTeamsSection />
         <MentorMatch />
         <TrackRecord />
         <ResourceBridge />

@@ -1,9 +1,20 @@
 .hero {
+  position: relative;
+  isolation: isolate;
   padding-block: clamp(3.5rem, 8vw, 7.5rem) clamp(4rem, 8vw, 7rem);
   overflow: hidden;
 }
 
+.cursorGrid {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, black 10%, black 82%, transparent 100%);
+}
+
 .layout {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
   align-items: center;

@@ -31,7 +31,8 @@ export function MediaPlaceholder({
       transition={drift && !reduceMotion ? { duration: 9, repeat: Infinity, ease: 'easeInOut' } : undefined}
     >
       <span className={styles.grid} aria-hidden="true" />
-      {children ?? <span className={styles.label}>{label}</span>}
+      {children}
+      <span className={styles.label}>{label}</span>
     </motion.div>
   )
 }

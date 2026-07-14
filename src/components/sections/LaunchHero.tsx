@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "motion/react";
 import { ActionLink } from "../ui/ActionLink";
+import { CursorGrid } from "../ui/CursorGrid";
 import { Icon } from "../ui/Icon";
 import { PageContainer } from "../ui/PageContainer";
 import styles from "./LaunchHero.module.css";
@@ -10,6 +11,22 @@ export function LaunchHero() {
 
   return (
     <section className={styles.hero} id="top">
+      {!reduceMotion && (
+        <CursorGrid
+          className={styles.cursorGrid}
+          cellSize={72}
+          color="#117b76"
+          radius={190}
+          holdTime={260}
+          fadeDuration={950}
+          lineWidth={1.15}
+          maxOpacity={0.42}
+          fillOpacity={0.035}
+          gridOpacity={0.045}
+          cellRadius={3}
+          pulseSpeed={720}
+        />
+      )}
       <PageContainer className={styles.layout}>
         <motion.div className={styles.content} {...reveal} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}>
           <span className={styles.kicker}>

@@ -34,6 +34,22 @@ export type Resource = {
   tone: string
 }
 
+export type StationedTeam = {
+  name: string
+  logo: 'orbit' | 'leaf' | 'pulse' | 'quantum' | 'portal' | 'sprout'
+  industry: string
+  description: string
+  members: string
+  founded: string
+  stage: string
+  tone: string
+}
+
+export type StationedTeamStat = {
+  value: string
+  label: string
+}
+
 export const navigation = [
   { label: 'درباره ما', href: '#philosophy' },
   { label: 'برنامه‌ها', href: '#programs' },
@@ -139,6 +155,76 @@ export const impactMetrics: ImpactMetric[] = [
   { value: '۱۲', label: 'میلیارد تومان سرمایه جذب‌شده' },
   { value: '+۵۰۰', label: 'ساعت منتورینگ تخصصی' },
   { value: '۹۰٪', label: 'نرخ بقا پس از فارغ‌التحصیلی' },
+]
+
+export const stationedTeamStats: StationedTeamStat[] = [
+  { value: '۲۴', label: 'تیم فعال' },
+  { value: '+۱۸۰', label: 'عضو تیم' },
+  { value: '۱۵M$', label: 'سرمایه جذب‌شده' },
+  { value: '۶', label: 'خروج موفق' },
+]
+
+export const stationedTeams: StationedTeam[] = [
+  {
+    name: 'نورال‌فلو AI',
+    logo: 'orbit',
+    industry: 'هوش مصنوعی',
+    description: 'ابزارهای نسل جدید بهینه‌سازی شبکه عصبی برای خطوط یادگیری ماشین سازمانی.',
+    members: '۸',
+    founded: '۱۴۰۳',
+    stage: 'سری A',
+    tone: '#a59ab8',
+  },
+  {
+    name: 'گرین‌گرید انرژی',
+    logo: 'leaf',
+    industry: 'فناوری پاک',
+    description: 'راهکارهای شبکه هوشمند برای مدیریت و توزیع پایدار انرژی‌های تجدیدپذیر.',
+    members: '۶',
+    founded: '۱۴۰۲',
+    stage: 'بذری',
+    tone: '#8fb8a5',
+  },
+  {
+    name: 'مدسینک سلامت',
+    logo: 'pulse',
+    industry: 'سلامت دیجیتال',
+    description: 'پلتفرم پایش بیمار و تحلیل پیش‌بینانه سلامت مبتنی بر هوش مصنوعی.',
+    members: '۱۰',
+    founded: '۱۴۰۳',
+    stage: 'پیش‌بذری',
+    tone: '#c9a3a0',
+  },
+  {
+    name: 'کوانتوم‌لیپ لبز',
+    logo: 'quantum',
+    industry: 'محاسبات کوانتومی',
+    description: 'توسعه الگوریتم‌های کوانتومی برای مدل‌سازی و بهینه‌سازی مسائل مالی.',
+    members: '۵',
+    founded: '۱۴۰۴',
+    stage: 'پیش‌بذری',
+    tone: '#87b8bd',
+  },
+  {
+    name: 'ادوورس XR',
+    logo: 'portal',
+    industry: 'فناوری آموزش',
+    description: 'تجربه‌های آموزشی فراگیر واقعیت مجازی و افزوده برای یادگیری علوم پایه.',
+    members: '۷',
+    founded: '۱۴۰۳',
+    stage: 'بذری',
+    tone: '#d1af7e',
+  },
+  {
+    name: 'آگری‌بات سیستمز',
+    logo: 'sprout',
+    industry: 'فناوری کشاورزی',
+    description: 'ربات‌های کشاورزی خودران و راهکارهای داده‌محور برای کشاورزی دقیق.',
+    members: '۹',
+    founded: '۱۴۰۲',
+    stage: 'سری A',
+    tone: '#9caf82',
+  },
 ]
 
 export const resources: Resource[] = [
