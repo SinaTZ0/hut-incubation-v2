@@ -34,6 +34,27 @@ export type Resource = {
   tone: string
 }
 
+export type NewsItem = {
+  category: string
+  date: string
+  title: string
+  description: string
+  image: string
+  tone: 'teal' | 'coral' | 'sand'
+}
+
+export type EventItem = {
+  type: string
+  day: string
+  month: string
+  dateLabel: string
+  title: string
+  description: string
+  time: string
+  location: string
+  audience: string
+}
+
 export type StationedTeam = {
   name: string
   logo: 'orbit' | 'leaf' | 'pulse' | 'quantum' | 'portal' | 'sprout'
@@ -55,6 +76,8 @@ export const navigation = [
   { label: 'برنامه‌ها', href: '#programs' },
   { label: 'مسیر رشد', href: '#journey' },
   { label: 'داستان‌ها', href: '#stories' },
+  { label: 'خبرها', href: '#news' },
+  { label: 'رویدادها', href: '#events' },
   { label: 'منتورها', href: '#mentors' },
   { label: 'منابع', href: '#resources' },
   { label: 'پرسش‌ها', href: '#faq' },
@@ -247,5 +270,68 @@ export const resources: Resource[] = [
     title: 'چگونه یک MVP را در ۳۰ روز بسازیم؟',
     description: 'راهنمای گام‌به‌گام برای ساخت چیزی که از کاربر یاد می‌گیرد.',
     tone: '#8a7765',
+  },
+]
+
+export const newsItems: NewsItem[] = [
+  {
+    category: 'خبر جامعه',
+    date: '۲۵ تیر ۱۴۰۵',
+    title: 'سه تیم دانشجویی، از مسئله دانشگاه تا نخستین نمونه محصول',
+    description: 'تیم‌های دوره بهاره در دمو دی، آموخته‌هایشان را با جامعه دانشگاهی به اشتراک گذاشتند.',
+    image: '/Generated Image2.webp',
+    tone: 'teal',
+  },
+  {
+    category: 'فراخوان',
+    date: '۱۸ تیر ۱۴۰۵',
+    title: 'ثبت‌نام مسیر تابستانی ساخت محصول شروع شد',
+    description: 'اگر یک مسئله واقعی در ذهن دارید، این مسیر کوتاه برای آزمایش و ساختن کنار شماست.',
+    image: '/Generated workshop.webp',
+    tone: 'coral',
+  },
+  {
+    category: 'از زبان تیم‌ها',
+    date: '۱۰ تیر ۱۴۰۵',
+    title: 'چطور یک تیم چهار نفره، اولین مصاحبه‌های مشتری‌اش را انجام داد؟',
+    description: 'یادداشت کوتاه تیم «مدیار» درباره شروعی که با پرسیدن سؤال‌های درست شکل گرفت.',
+    image: '/Generated whiteboard.webp',
+    tone: 'sand',
+  },
+]
+
+export const events: EventItem[] = [
+  {
+    type: 'کارگاه عملی',
+    day: '۲۸',
+    month: 'تیر',
+    dateLabel: 'پنج‌شنبه ۲۸ تیر',
+    title: 'از مسئله دانشگاه تا یک ایده قابل آزمایش',
+    description: 'یک جلسه hands-on برای تبدیل دغدغه‌های روزمره به فرضیه‌هایی که می‌شود با کاربر واقعی سنجید.',
+    time: '۱۵:۰۰ تا ۱۷:۰۰',
+    location: 'ساختمان نوآوری · طبقه ۲',
+    audience: 'ویژه دانشجویان و فارغ‌التحصیلان',
+  },
+  {
+    type: 'جلسه تجربه',
+    day: '۰۴',
+    month: 'مرداد',
+    dateLabel: 'چهارشنبه ۴ مرداد',
+    title: 'پرسش و پاسخ با یک بنیان‌گذار جوان',
+    description: 'گفت‌وگویی صمیمی درباره انتخاب هم‌تیمی، شکست‌های کوچک و اولین مشتری.',
+    time: '۱۷:۳۰ تا ۱۹:۰۰',
+    location: 'آنلاین · لینک پس از ثبت‌نام',
+    audience: 'برای همه علاقه‌مندان',
+  },
+  {
+    type: 'دورهمی جامعه',
+    day: '۱۲',
+    month: 'مرداد',
+    dateLabel: 'پنج‌شنبه ۱۲ مرداد',
+    title: 'شب ایده‌ها؛ آشنایی با هم‌تیمی‌های آینده',
+    description: 'سه دقیقه فرصت دارید مسئله‌ای را که دوست دارید حل کنید تعریف کنید و بازخورد بگیرید.',
+    time: '۱۸:۰۰ تا ۲۰:۰۰',
+    location: 'حیاط مرکزی هاب',
+    audience: 'ورود آزاد با ثبت‌نام',
   },
 ]

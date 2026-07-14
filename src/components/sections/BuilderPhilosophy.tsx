@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "motion/react";
 import { PageContainer } from "../ui/PageContainer";
+import { SectionIntro } from "../ui/SectionIntro";
 import styles from "./BuilderPhilosophy.module.css";
 
 const principles = [
@@ -21,15 +22,11 @@ export function BuilderPhilosophy() {
           transition={{ duration: reduceMotion ? 0 : 0.9, delay: reduceMotion ? 0 : 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className={styles.statementLead}>
-            <span className={styles.eyebrow}>
-              <i aria-hidden="true" />
-              نگاه ما
-            </span>
-            <h2>
-              شتاب‌دهی مبتنی بر داده،
-              <br />
-              <em>بدون بوروکراسی دانشگاهی.</em>
-            </h2>
+            <SectionIntro
+              eyebrow="نگاه ما"
+              title={<>شتاب‌دهی مبتنی بر داده،<br /><em>بدون بوروکراسی دانشگاهی.</em></>}
+              light
+            />
           </div>
           <div className={styles.statementAside}>
             <p>

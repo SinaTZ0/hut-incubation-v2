@@ -1,8 +1,9 @@
+import type { ReactNode } from 'react'
 import styles from './SectionIntro.module.css'
 
 type SectionIntroProps = {
   eyebrow?: string
-  title: string
+  title: ReactNode
   titleId?: string
   description?: string
   align?: 'start' | 'center'

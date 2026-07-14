@@ -11,6 +11,9 @@ export type IconName =
   | 'check'
   | 'download'
   | 'play'
+  | 'calendar'
+  | 'clock'
+  | 'pin'
 
 type IconProps = {
   name: IconName
@@ -45,6 +48,9 @@ export function Icon({ name, size = 24, className }: IconProps) {
     check: <path d="m5 12 4 4L19 6" />,
     download: <><path d="M12 3v12" /><path d="m7 10 5 5 5-5M5 21h14" /></>,
     play: <><circle cx="12" cy="12" r="9" /><path d="m10 8 6 4-6 4Z" /></>,
+    calendar: <><rect x="3.5" y="5" width="17" height="15.5" rx="2" /><path d="M7.5 3v4M16.5 3v4M3.5 10h17" /><path d="M8 14h.01M12 14h.01M16 14h.01M8 17.5h.01M12 17.5h.01" /></>,
+    clock: <><circle cx="12" cy="12" r="8.5" /><path d="M12 7v5l3.5 2" /></>,
+    pin: <><path d="M19 10.2c0 4.4-7 10.3-7 10.3s-7-5.9-7-10.3a7 7 0 1 1 14 0Z" /><circle cx="12" cy="10" r="2.3" /></>,
   }
 
   return <svg {...common}>{paths[name]}</svg>

@@ -1,0 +1,79 @@
+import { events } from '../../data/content'
+import { ActionLink } from '../ui/ActionLink'
+import { Icon } from '../ui/Icon'
+import { PageContainer } from '../ui/PageContainer'
+import { SectionIntro } from '../ui/SectionIntro'
+import styles from './EventsSection.module.css'
+
+export function EventsSection() {
+  const [featured, ...upcoming] = events
+
+  return (
+    <section className={styles.section} id="events" aria-labelledby="events-title">
+      <PageContainer>
+        <div className={styles.heading}>
+          <SectionIntro
+            eyebrow="تقویم جامعه"
+            title="یک جای خالی برای یادگرفتن، ساختن و آشنا شدن."
+            titleId="events-title"
+            description="رویدادهایی کوچک و کاربردی برای اینکه از کلاس بیرون بیایید و با آدم‌های هم‌مسیر چیزی را امتحان کنید."
+            light
+          />
+          <ActionLink href="#events" variant="light" icon={<Icon name="calendar" size={17} />}>
+            مشاهده همه رویدادها
+          </ActionLink>
+        </div>
+
+        <div className={styles.eventsGrid}>
+          <article className={styles.featured}>
+            <div className={styles.featuredTop}>
+              <div className={styles.dateCard} aria-label={featured.dateLabel}>
+                <span>{featured.month}</span>
+                <strong>{featured.day}</strong>
+              </div>
+              <span className={styles.eventType}>{featured.type}</span>
+            </div>
+            <div>
+              <h3>{featured.title}</h3>
+              <p>{featured.description}</p>
+            </div>
+            <div className={styles.eventDetails}>
+              <span><Icon name="clock" size={16} />{featured.time}</span>
+              <span><Icon name="pin" size={16} />{featured.location}</span>
+            </div>
+            <div className={styles.featuredFooter}>
+              <span>{featured.audience}</span>
+              <ActionLink href="#events" variant="light" icon={<Icon name="arrow" size={16} />}>
+                رزرو جای من
+              </ActionLink>
+            </div>
+          </article>
+
+          <div className={styles.upcoming}>
+            <div className={styles.upcomingLabel}>بعدی‌ها</div>
+            {upcoming.map((event) => (
+              <article className={styles.event} key={event.title}>
+                <div className={styles.smallDate} aria-label={event.dateLabel}>
+                  <strong>{event.day}</strong>
+                  <span>{event.month}</span>
+                </div>
+                <div className={styles.eventCopy}>
+                  <div className={styles.eventMeta}><span>{event.type}</span><time>{event.dateLabel}</time></div>
+                  <h3>{event.title}</h3>
+                  <p>{event.description}</p>
+                  <div className={styles.eventDetails}>
+                    <span><Icon name="clock" size={15} />{event.time}</span>
+                    <span><Icon name="pin" size={15} />{event.location}</span>
+                  </div>
+                </div>
+                <a className={styles.eventArrow} href="#events" aria-label={`جزئیات ${event.title}`}>
+                  <Icon name="arrow" size={18} />
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </PageContainer>
+    </section>
+  )
+}
