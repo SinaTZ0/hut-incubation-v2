@@ -5,6 +5,8 @@ import { LaunchHero } from './components/sections/LaunchHero'
 import { MentorMatch } from './components/sections/MentorMatch'
 import { ProgramTracks } from './components/sections/ProgramTracks'
 import { ResourceBridge } from './components/sections/ResourceBridge'
+import { SuccessStories } from './components/sections/SuccessStories'
+import { Faq } from './components/sections/Faq'
 import { SiteFooter } from './components/sections/SiteFooter'
 import { SiteHeader } from './components/sections/SiteHeader'
 import { StationedTeamsSection } from './components/sections/StationedTeamsSection'
@@ -25,7 +27,9 @@ function App() {
         <StationedTeamsSection />
         <MentorMatch />
         <TrackRecord />
+        <SuccessStories />
         <ResourceBridge />
+        <Faq />
       </main>
       <SiteFooter />
     </div>

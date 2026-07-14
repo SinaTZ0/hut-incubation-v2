@@ -4,7 +4,7 @@
   isolation: isolate;
   overflow: hidden;
   min-height: 15rem;
-  border-radius: 1rem;
+  border-radius: 1.35rem;
   background:
     radial-gradient(circle at 72% 22%, color-mix(in srgb, white 18%, transparent), transparent 30%),
     linear-gradient(145deg, color-mix(in srgb, var(--media-tone) 72%, #0b1e1c), var(--media-tone));

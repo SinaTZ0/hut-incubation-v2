@@ -2,20 +2,19 @@
 @import "tailwindcss";
 
 :root {
-  /* --paper: #f5f1e8; */
-  --paper: #e9ebee;
-  --paper-deep: #eae4d8;
-  --ink: #1b1b1f;
-  --muted: #656361;
-  --turquoise: #1e8a7a;
-  --turquoise-deep: #116d64;
-  --terracotta: #b5533c;
-  --brass: #c9a227;
-  --line: color-mix(in srgb, var(--ink) 10%, transparent);
-  --line-strong: color-mix(in srgb, var(--ink) 17%, transparent);
-  --content-width: 82rem;
-  --page-gutter: clamp(1.2rem, 4vw, 4rem);
-  --section-title: clamp(1.85rem, 3.4vw, 3.35rem);
+  --paper: #fafbfc;
+  --paper-deep: #f1f5f5;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --turquoise: #14b8a6;
+  --turquoise-deep: #0f766e;
+  --terracotta: #f97316;
+  --brass: #f97316;
+  --line: color-mix(in srgb, var(--ink) 9%, transparent);
+  --line-strong: color-mix(in srgb, var(--ink) 14%, transparent);
+  --content-width: 84rem;
+  --page-gutter: clamp(1.25rem, 5vw, 5rem);
+  --section-title: clamp(2rem, 4vw, 3.5rem);
   font-family: 'Vazirmatn Variable', Vazirmatn, Tahoma, sans-serif;
   font-synthesis: none;
   color: var(--ink);
@@ -38,7 +37,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
-  background: var(--paper);
+  background:
+    radial-gradient(circle at 90% 0%, rgba(20, 184, 166, 0.06), transparent 26rem),
+    var(--paper);
 }
 
 body {
@@ -60,6 +61,12 @@ img, svg {
 ::selection {
   color: var(--paper);
   background: var(--turquoise-deep);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--turquoise) 55%, transparent);
+  outline-offset: 4px;
 }
 
 @media (prefers-reduced-motion: reduce) {

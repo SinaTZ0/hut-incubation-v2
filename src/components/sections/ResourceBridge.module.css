@@ -1,9 +1,9 @@
 .section { padding-block: clamp(5rem, 10vw, 8rem) 2rem; }
 .heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-block-end: 3.5rem; }
-.resources { display: grid; grid-template-columns: repeat(3, 1fr); border-block: 1px solid var(--line-strong); }
+.resources { display: grid; grid-template-columns: repeat(3, 1fr); overflow: hidden; border: 1px solid var(--line-strong); border-radius: 1.4rem; background: #fff; box-shadow: 0 .8rem 2rem rgba(15,23,42,.04); }
 .resources article { display: grid; grid-template-columns: 0.72fr 1fr; min-height: 18rem; padding: 1.25rem; border-inline-start: 1px solid var(--line-strong); }
 .resources article:first-child { border-inline-start: 0; }
-.thumb { --thumb: #7d8a7d; position: relative; overflow: hidden; min-height: 12rem; background: linear-gradient(145deg, color-mix(in srgb, var(--thumb) 65%, white), var(--thumb)); clip-path: polygon(0 0, 100% 0, 100% 88%, 15% 100%, 0 82%); }
+.thumb { --thumb: #7d8a7d; position: relative; overflow: hidden; min-height: 12rem; border-radius: 1rem; background: linear-gradient(145deg, color-mix(in srgb, var(--thumb) 65%, white), var(--thumb)); }
 .thumb img { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.82) contrast(.96); }
 .thumb::before { content: ''; position: absolute; z-index: 1; inset: 16% 14%; border: 1px solid color-mix(in srgb, white 45%, transparent); transform: rotate(-8deg); box-shadow: 1.6rem 1.5rem 0 color-mix(in srgb, var(--ink) 15%, transparent); pointer-events: none; }.thumb span { position: absolute; z-index: 2; inset: auto 0.8rem 1rem auto; color: white; font: 400 0.65rem/1 sans-serif; }
 .copy { padding: 0.5rem 1rem; display: flex; flex-direction: column; }.copy > span { color: var(--terracotta); font-size: 0.65rem; font-weight: 800; }.copy h3 { color: var(--ink); font-size: 0.95rem; line-height: 1.7; margin: 1rem 0 0.6rem; }.copy p { color: var(--muted); font-size: 0.68rem; line-height: 1.8; margin: 0; }.copy a { display: flex; align-items: center; gap: 0.4rem; color: var(--turquoise-deep); text-decoration: none; font-size: 0.68rem; font-weight: 700; margin-block-start: auto; }

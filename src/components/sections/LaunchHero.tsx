@@ -29,9 +29,6 @@ export function LaunchHero() {
       )}
       <PageContainer className={styles.layout}>
         <motion.div className={styles.content} {...reveal} transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}>
-          <span className={styles.kicker}>
-            <i /> جایی برای ساختن، نه فقط حرف زدن
-          </span>
           <h1>
             مرکز
             <em> نوآوری </em>

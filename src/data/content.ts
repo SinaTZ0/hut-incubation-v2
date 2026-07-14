@@ -54,8 +54,10 @@ export const navigation = [
   { label: 'درباره ما', href: '#philosophy' },
   { label: 'برنامه‌ها', href: '#programs' },
   { label: 'مسیر رشد', href: '#journey' },
+  { label: 'داستان‌ها', href: '#stories' },
   { label: 'منتورها', href: '#mentors' },
   { label: 'منابع', href: '#resources' },
+  { label: 'پرسش‌ها', href: '#faq' },
 ]
 
 export const programTracks: ProgramTrack[] = [

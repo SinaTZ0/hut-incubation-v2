@@ -4,7 +4,7 @@
   overflow: hidden;
   padding-block: clamp(5rem, 9vw, 8rem);
   border-block: 1px solid var(--line);
-  background: #efebe1;
+  background: #f1f7f7;
 }
 
 .section::before {
@@ -100,14 +100,14 @@
   border: 1px solid color-mix(in srgb, var(--turquoise) 55%, transparent);
   border-radius: 50%;
   background: var(--paper);
-  box-shadow: 0 0 0 0.55rem #efebe1;
+  box-shadow: 0 0 0 0.55rem #f1f7f7;
   transition: color 340ms ease, background 340ms ease, box-shadow 340ms ease, transform 340ms cubic-bezier(.22,1,.36,1);
 }
 
 .step:hover .marker {
   color: var(--paper);
   background: var(--turquoise-deep);
-  box-shadow: 0 0 0 0.55rem #efebe1, 0 0.5rem 1.5rem color-mix(in srgb, var(--turquoise-deep) 22%, transparent);
+  box-shadow: 0 0 0 0.55rem #f1f7f7, 0 0.5rem 1.5rem color-mix(in srgb, var(--turquoise-deep) 22%, transparent);
   transform: scale(1.08) rotate(-5deg);
 }
 
@@ -122,7 +122,7 @@
   font: 500 0.68rem/1 sans-serif;
   border: 1px solid var(--turquoise);
   border-radius: 50%;
-  background: #efebe1;
+  background: #f1f7f7;
 }
 
 .step h3 {
