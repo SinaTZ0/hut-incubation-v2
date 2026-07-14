@@ -1,8 +1,9 @@
 @import '@fontsource-variable/vazirmatn';
+@import "tailwindcss";
 
 :root {
   /* --paper: #f5f1e8; */
-  --paper: #ffffff;
+  --paper: #e9ebee;
   --paper-deep: #eae4d8;
   --ink: #1b1b1f;
   --muted: #656361;
@@ -24,16 +25,49 @@
   scroll-behavior: smooth;
 }
 
-* { box-sizing: border-box; }
-html { background: var(--paper); scroll-padding-block-start: 1rem; }
-body { min-width: 320px; min-height: 100vh; margin: 0; background: var(--paper); }
-body { position: relative; }
-button, a { -webkit-tap-highlight-color: transparent; }
-button { font-family: inherit; }
-img, svg { display: block; }
-::selection { color: var(--paper); background: var(--turquoise-deep); }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--paper);
+  scroll-padding-block-start: 1rem;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--paper);
+}
+
+body {
+  position: relative;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+}
+
+img, svg {
+  display: block;
+}
+
+::selection {
+  color: var(--paper);
+  background: var(--turquoise-deep);
+}
 
 @media (prefers-reduced-motion: reduce) {
-  :root { scroll-behavior: auto; }
-  *, *::before, *::after { transition-duration: 0.01ms !important; }
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+  }
 }
