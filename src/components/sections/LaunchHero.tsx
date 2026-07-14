@@ -53,16 +53,71 @@ export function LaunchHero() {
           <motion.div
             className={styles.imageShadow}
             initial={reduceMotion ? false : { filter: "drop-shadow(17rem 17rem 0rem #117B76)" }}
-            animate={reduceMotion ? undefined : { filter: "drop-shadow(5rem 3rem 0rem #117B76)" }}
-            transition={reduceMotion ? { duration: 0 } : { duration: 1.35, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+            animate={
+              reduceMotion
+                ? undefined
+                : {
+                    filter: [
+                      "drop-shadow(17rem 17rem 0rem #117B76)",
+                      "drop-shadow(5.8rem 3.9rem 0rem #117B76)",
+                      "drop-shadow(5rem 3rem 0rem #117B76)",
+                    ],
+                  }
+            }
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : {
+                    duration: 1.5,
+                    delay: 0.12,
+                    times: [0, 0.67, 1],
+                    ease: [
+                      [0.12, 0.8, 0.2, 1],
+                      [0.22, 1, 0.36, 1],
+                    ],
+                  }
+            }
           >
             <motion.div
               className={styles.imageFrame}
               initial={reduceMotion ? false : { x: "-14rem", y: "-14rem" }}
-              animate={reduceMotion ? undefined : { x: 0, y: 0 }}
-              transition={reduceMotion ? { duration: 0 } : { duration: 1.25, ease: [0.22, 1, 0.36, 1] }}
+              animate={
+                reduceMotion ? undefined : { x: ["-14rem", "-1.25rem", "0rem"], y: ["-14rem", "-1.25rem", "0rem"] }
+              }
+              transition={
+                reduceMotion
+                  ? { duration: 0 }
+                  : {
+                      duration: 1.5,
+                      times: [0, 0.67, 1],
+                      ease: [
+                        [0.12, 0.8, 0.2, 1],
+                        [0.22, 1, 0.36, 1],
+                      ],
+                    }
+              }
             >
-              <img src="/Generated Image2.webp" alt="فضای کار اشتراکی و تیم‌های در حال ساخت" />
+              <motion.img
+                src="/Generated Image2.webp"
+                alt="فضای کار اشتراکی و تیم‌های در حال ساخت"
+                width={1262}
+                height={520}
+                fetchPriority="high"
+                initial={reduceMotion ? false : { scale: 1 }}
+                animate={reduceMotion ? undefined : { scale: [1, 1.2, 1.08] }}
+                transition={
+                  reduceMotion
+                    ? { duration: 0 }
+                    : {
+                        duration: 1.5,
+                        times: [0, 0.67, 1],
+                        ease: [
+                          [0.12, 0.8, 0.2, 1],
+                          [0.22, 1, 0.36, 1],
+                        ],
+                      }
+                }
+              />
               <span className={styles.visualCaption}>فضای کار بنیان‌گذاران · پردیس نوآوری</span>
             </motion.div>
           </motion.div>
