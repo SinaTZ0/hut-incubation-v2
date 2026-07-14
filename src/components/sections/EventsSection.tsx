@@ -13,14 +13,14 @@ export function EventsSection() {
       <PageContainer>
         <div className={styles.heading}>
           <SectionIntro
-            eyebrow="تقویم جامعه"
-            title="یک جای خالی برای یادگرفتن، ساختن و آشنا شدن."
+            eyebrow="تقویم رویدادها"
+            title="برنامه‌های آموزشی و نشست‌های مرکز"
             titleId="events-title"
-            description="رویدادهایی کوچک و کاربردی برای اینکه از کلاس بیرون بیایید و با آدم‌های هم‌مسیر چیزی را امتحان کنید."
+            description="زمان برگزاری کارگاه‌ها، نشست‌های تخصصی و برنامه‌های معرفی مرکز در این بخش اعلام می‌شود."
             light
           />
           <ActionLink href="#events" variant="light" icon={<Icon name="calendar" size={17} />}>
-            مشاهده همه رویدادها
+            مشاهده تقویم رویدادها
           </ActionLink>
         </div>
 
@@ -44,13 +44,13 @@ export function EventsSection() {
             <div className={styles.featuredFooter}>
               <span>{featured.audience}</span>
               <ActionLink href="#events" variant="light" icon={<Icon name="arrow" size={16} />}>
-                رزرو جای من
+                اطلاعات و ثبت‌نام
               </ActionLink>
             </div>
           </article>
 
           <div className={styles.upcoming}>
-            <div className={styles.upcomingLabel}>بعدی‌ها</div>
+            <div className={styles.upcomingLabel}>رویدادهای پیش‌رو</div>
             {upcoming.map((event) => (
               <article className={styles.event} key={event.title}>
                 <div className={styles.smallDate} aria-label={event.dateLabel}>

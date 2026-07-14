@@ -15,8 +15,8 @@ export function FounderPath() {
     <section className={styles.section} id="journey">
       <PageContainer>
         <div className={styles.heading}>
-          <SectionIntro eyebrow="مسیر بنیان‌گذار" title="از درخواست تا روبه‌رو شدن با سرمایه‌گذار، شفاف و قابل پیگیری." titleId="journey-title" />
-          <p>در هر مرحله می‌دانید چه چیزی سنجیده می‌شود، چه کسی کنارتان است و خروجی بعدی چیست.</p>
+          <SectionIntro eyebrow="فرایند پذیرش و فعالیت" title="مراحل بررسی و توسعه طرح، شفاف و قابل پیگیری است." titleId="journey-title" />
+          <p>در هر مرحله، موضوع ارزیابی، مسئول پیگیری و خروجی مورد انتظار به‌صورت روشن اعلام می‌شود.</p>
         </div>
         <div className={styles.steps} ref={ref} role="list" aria-labelledby="journey-title">
           <div className={styles.rail} aria-hidden="true">

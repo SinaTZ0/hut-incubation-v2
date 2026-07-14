@@ -10,16 +10,16 @@ export function LabShowcase() {
       <PageContainer>
         <div className={styles.heading}>
           <SectionIntro
-            eyebrow="آزمایشگاه ساخت"
-            title="پیش از ورود، خودتان را اینجا تصور کنید."
-            description="فضایی برای تمرکز عمیق، برخورد اتفاقی ایده‌ها و ساختن چیزی که بتوان آن را لمس کرد."
+            eyebrow="فضا و امکانات مرکز"
+            title="محیطی برای آموزش، پژوهش و همکاری میان‌رشته‌ای"
+            description="فضاهای کاری و آموزشی مرکز برای برگزاری جلسات، توسعه نمونه‌های اولیه و تعامل میان دانشجویان، استادان و متخصصان فراهم شده‌اند."
           />
           <a href="#lab-grid">
             <Icon name="play" size={28} />
             <span>
-              یک روز در مرکز
+              آشنایی با مرکز
               <br />
-              <b>روایت ۹۰ ثانیه‌ای</b>
+              <b>معرفی تصویری</b>
             </span>
           </a>
         </div>
@@ -28,7 +28,7 @@ export function LabShowcase() {
             className={styles.whiteboard}
             shape="arch"
             tone="#817d70"
-            label="اتاق ایده‌پردازی و وایت‌بردهای در حال کار"
+            label="اتاق جلسات و ارائه"
             drift
           >
             <img className={styles.mediaImage} src="/Generated whiteboard.webp" alt="" aria-hidden="true" />
@@ -37,7 +37,7 @@ export function LabShowcase() {
             className={styles.workshop}
             shape="cutCorner"
             tone="#725f4e"
-            label="میزهای نمونه‌سازی و کارگاه محصول"
+            label="کارگاه توسعه نمونه اولیه"
           >
             <img className={styles.mediaImage} src="/Generated workshop.webp" alt="" aria-hidden="true" />
           </MediaPlaceholder>
@@ -45,7 +45,7 @@ export function LabShowcase() {
             className={styles.cowork}
             shape="offset"
             tone="#4f6861"
-            label="فضای کار اشتراکی تیم‌ها"
+            label="فضای کاری مشترک"
             drift
           >
             <img className={styles.mediaImage} src="/Generated cowork.webp" alt="" aria-hidden="true" />
@@ -54,15 +54,15 @@ export function LabShowcase() {
             className={styles.pod}
             shape="capsule"
             tone="#3f5753"
-            label="اتاق جلسه شیشه‌ای برای گفت‌وگوهای تیمی"
+            label="اتاق جلسات مشاوره"
           >
             <img className={styles.mediaImage} src="/Generated space.webp" alt="" aria-hidden="true" />
           </MediaPlaceholder>
 
           <blockquote className={styles.quote}>
-            «اینجا ایده‌ها روی کاغذ نمی‌مانند؛
+          «در این مرکز، طرح‌ها در فرایندی مرحله‌ای بررسی و توسعه می‌یابند؛
             <br />
-            <em>جایی برای آزمایش پیدا می‌کنند.</em>»
+            <em>از آموزش تا ارزیابی و همکاری.</em>»
           </blockquote>
         </div>
       </PageContainer>

@@ -8,9 +8,9 @@ import styles from "./TrackRecord.module.css";
 
 const trust = [
   "تحت نظارت دانشگاه و پارک علم و فناوری",
-  "حمایت حقوقی و مالکیت فکری",
-  "همکاری با وزارت علوم و شبکه صنعتی",
-  "دسترسی‌پذیر برای همه بنیان‌گذاران",
+  "پشتیبانی حقوقی و مالکیت فکری",
+  "همکاری با نهادهای علمی و صنعتی",
+  "دسترسی برای دانشجویان و پژوهشگران",
 ];
 
 const counterTargets = [80, 12, 500, 90];
@@ -58,8 +58,8 @@ export function TrackRecord() {
         <div className={styles.top}>
           <div className={styles.title}>
             <SectionIntro
-              eyebrow="کارنامه ما"
-              title="اعتماد، وقتی ماندگار است که قابل اندازه‌گیری باشد."
+              eyebrow="گزارش عملکرد"
+              title="فعالیت‌های مرکز بر اساس شاخص‌های قابل اندازه‌گیری گزارش می‌شوند."
               titleId="impact-title"
               light
             />
@@ -84,7 +84,7 @@ export function TrackRecord() {
           </div>
         </div>
         <div className={styles.trust}>
-          <strong>پشتوانه‌ای برای ساختن</strong>
+          <strong>چارچوب فعالیت مرکز</strong>
           <ul>
             {trust.map((item) => (
               <li key={item}>
@@ -94,7 +94,7 @@ export function TrackRecord() {
             ))}
           </ul>
         </div>
-        <div className={styles.marquee} aria-label="نمونه‌ای از تیم‌های جامعه هاب">
+        <div className={styles.marquee} aria-label="نام تیم‌های مستقر و همکار مرکز">
           <div className={styles.marqueeTrack}>
             {[0, 1].map((copy) => (
               <div className={styles.marqueeGroup} key={copy} aria-hidden={copy === 1 ? true : undefined}>

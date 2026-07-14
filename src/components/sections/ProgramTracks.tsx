@@ -10,8 +10,8 @@ export function ProgramTracks() {
     <section className={styles.section} id="programs">
       <PageContainer className={styles.layout}>
         <aside className={styles.aside}>
-          <SectionIntro eyebrow="مسیرهای برنامه" title="هر مرحله، ابزار و همراه خودش را می‌خواهد." description="از جایی شروع کنید که امروز ایستاده‌اید؛ نه از جایی که فکر می‌کنید باید باشید." />
-          <div className={styles.legend}><span>۵ مسیر تخصصی</span><i /><span>۱۲ هفته همراهی</span></div>
+          <SectionIntro eyebrow="برنامه‌های مرکز" title="برنامه‌ها بر اساس مرحله توسعه طرح تنظیم می‌شوند." description="هر برنامه شامل آموزش، مشاوره و ارزیابی متناسب با موضوع و مرحله فعالیت طرح است." />
+          <div className={styles.legend}><span>۵ برنامه تخصصی</span><i /><span>۱۲ هفته آموزش و مشاوره</span></div>
         </aside>
 
         <Accordion.Root className={styles.list} defaultValue={['validation']}>

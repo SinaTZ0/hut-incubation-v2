@@ -18,12 +18,12 @@ export function MentorMatch() {
       <PageContainer>
         <div className={styles.heading}>
           <SectionIntro
-            eyebrow="تطبیق منتور"
-            title="رزومه کافی نیست؛ شیوه همکاری باید به شما بخورد."
-            description="منتور بر اساس مسئله، مرحله رشد و سبک کاری تیم انتخاب می‌شود، نه صرفاً عنوان شغلی."
+            eyebrow="مشاوران و متخصصان"
+            title="مشاوران مرکز در حوزه‌های مختلف تخصصی فعالیت می‌کنند."
+            description="اعضای شبکه مشاوره بر اساس موضوع طرح و نیازهای تخصصی آن، در جلسات آموزشی و ارزیابی مشارکت می‌کنند."
           />
           <ActionLink href="#mentors" variant="text" icon={<Icon name="arrow" size={18} />}>
-            مشاهده شبکه منتورها
+            مشاهده اعضای شبکه مشاوره
           </ActionLink>
         </div>
         <div className={styles.list}>
@@ -57,7 +57,7 @@ export function MentorMatch() {
                     <dd>{mentor.focus}</dd>
                   </div>
                   <div>
-                    <dt>سبک همکاری</dt>
+                    <dt>نحوه مشارکت</dt>
                     <dd>{mentor.style}</dd>
                   </div>
                 </dl>

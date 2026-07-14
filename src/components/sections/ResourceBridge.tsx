@@ -16,12 +16,12 @@ export function ResourceBridge() {
       <PageContainer>
         <div className={styles.heading}>
           <SectionIntro
-            eyebrow="پل دانش"
-            title="برای شروع کردن، لازم نیست منتظر پذیرش بمانید."
-            description="تجربه‌ها، ابزارها و الگوهایی که همین امروز یک تصمیم بهتر به شما می‌دهند."
+            eyebrow="منابع آموزشی"
+            title="منابع منتخب برای مطالعه و استفاده آموزشی"
+            description="راهنماها، گزارش‌ها و الگوهای مقدماتی مرتبط با توسعه طرح‌های نوآورانه در این بخش گردآوری شده‌اند."
           />
           <ActionLink href="#toolkit" variant="outline" icon={<Icon name="download" size={18} />}>
-            بسته ابزار بنیان‌گذاران
+            فهرست منابع آموزشی
           </ActionLink>
         </div>
         <div className={styles.resources}>
@@ -41,7 +41,7 @@ export function ResourceBridge() {
                 <h3>{resource.title}</h3>
                 <p>{resource.description}</p>
                 <a href="#resources">
-                  مطالعه مطلب <Icon name="arrow" size={16} />
+                  مشاهده منبع <Icon name="arrow" size={16} />
                 </a>
               </div>
             </article>
@@ -50,27 +50,27 @@ export function ResourceBridge() {
 
         <div className={styles.toolkit} id="toolkit">
           <div>
-            <span>دانلود رایگان</span>
-            <h3>بسته ابزار بنیان‌گذاران</h3>
-            <p>قالب ارائه سرمایه‌گذاری، مدل مالی، نقشه مصاحبه مشتری و چک‌لیست اتاق داده.</p>
+            <span>منبع قابل دریافت</span>
+            <h3>مجموعه فرم‌ها و الگوهای آموزشی</h3>
+            <p>نمونه فرم ارزیابی مسئله، الگوی مدل مالی و چک‌لیست مستندسازی فعالیت طرح.</p>
           </div>
           <ActionLink href="#toolkit" variant="light" icon={<Icon name="download" size={18} />}>
-            دریافت بسته ابزار
+            دریافت مجموعه فرم‌ها
           </ActionLink>
         </div>
 
         <div className={styles.finalCta} id="apply">
           <div>
-            <span>برای دوره بعدی آماده‌اید؟</span>
-            <h2>مسیر رشدتان را از همین‌جا آغاز کنید.</h2>
-            <p>درخواست اولیه کمتر از ده دقیقه زمان می‌برد.</p>
+            <span>اطلاعیه پذیرش</span>
+            <h2>اطلاعات دوره‌های آموزشی و پذیرش مرکز</h2>
+            <p>زمان‌بندی و شرایط ثبت درخواست در اطلاعیه‌های هر دوره اعلام می‌شود.</p>
           </div>
           <div className={styles.actions}>
             <ActionLink href="#programs" variant="light" icon={<Icon name="arrow" size={18} />}>
-              مشاهده برنامه‌ها
+              مشاهده برنامه‌های مرکز
             </ActionLink>
             <ActionLink href="#apply" variant="light" icon={<Icon name="arrow" size={18} />}>
-              ثبت درخواست پذیرش
+              اطلاعات پذیرش
             </ActionLink>
           </div>
         </div>

@@ -33,21 +33,21 @@ export function LaunchHero() {
         <motion.div className={styles.content} {...reveal} transition={revealTransition}>
           <h1>
             مرکز
-            <em> نوآوری </em>
+            <em> نوآوری و کارآفرینی </em>
             دانشگاه صنعتی همدان
           </h1>
-          <p>از نخستین گفت‌وگو با مشتری تا جذب سرمایه، کنار شما هستیم تا سریع‌تر، هوشمندانه‌تر و پایدارتر رشد کنید.</p>
+          <p>مرکز نوآوری و شتاب‌دهی دانشگاه، بستر آموزش، مشاوره و توسعه طرح‌های نوآورانه دانشجویان و پژوهشگران دانشگاه صنعتی همدان است.</p>
           <div className={styles.actions}>
             <ActionLink href="#apply" icon={<Icon name="arrow" size={19} />}>
-              ثبت درخواست پذیرش
+              اطلاعات پذیرش
             </ActionLink>
             <ActionLink href="#programs" variant="outline" icon={<Icon name="arrow" size={19} />}>
-              مشاهده دوره‌های پذیرش
+              معرفی برنامه‌ها
             </ActionLink>
           </div>
           <div className={styles.note}>
-            <strong>دوره بعدی پذیرش</strong>
-            <span>پاییز ۱۴۰۵ · ظرفیت محدود</span>
+            <strong>اطلاعیه آموزشی</strong>
+            <span>دوره پاییز ۱۴۰۵ · به‌زودی اعلام می‌شود</span>
           </div>
         </motion.div>
 
@@ -73,12 +73,12 @@ export function LaunchHero() {
             >
               <img
                 src="/Generated Image2.webp"
-                alt="فضای کار اشتراکی و تیم‌های در حال ساخت"
+                alt="فضای کار مشترک مرکز نوآوری"
                 width={1262}
                 height={520}
                 fetchPriority="high"
               />
-              <span className={styles.visualCaption}>فضای کار بنیان‌گذاران · پردیس نوآوری</span>
+              <span className={styles.visualCaption}>فضای کار مشترک · مرکز نوآوری دانشگاه</span>
             </motion.div>
           </motion.div>
           <span className={styles.seal}>
@@ -86,7 +86,7 @@ export function LaunchHero() {
             <small>
               هفته
               <br />
-              ساخت فشرده
+              دوره آموزشی
             </small>
           </span>
         </div>

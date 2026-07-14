@@ -13,13 +13,13 @@ export function NewsSection() {
       <PageContainer>
         <div className={styles.heading}>
           <SectionIntro
-            eyebrow="تازه‌های هاب"
-            title="چیزهایی که در جامعه ما در جریان است."
+            eyebrow="اخبار مرکز"
+            title="آخرین اطلاعیه‌ها و گزارش‌های فعالیت مرکز"
             titleId="news-title"
-            description="خبرهای کوتاه از تیم‌های دانشجویی، فرصت‌های تازه و تجربه‌هایی که می‌تواند جرقه شروع شما باشد."
+            description="در این بخش، اخبار، اطلاعیه‌های آموزشی و گزارش رویدادهای مرکز نوآوری و شتاب‌دهی دانشگاه منتشر می‌شود."
           />
           <ActionLink href="#news" variant="outline" icon={<Icon name="arrow" size={17} />}>
-            آرشیو خبرها
+            آرشیو اخبار
           </ActionLink>
         </div>
 
@@ -28,7 +28,7 @@ export function NewsSection() {
             <div className={`${styles.featuredMedia} ${styles[featured.tone]}`}>
               <img src={featured.image} alt="" aria-hidden="true" loading="lazy" decoding="async" />
               <span className={styles.number}>۰۱</span>
-              <span className={styles.mediaLabel}>گزارش جامعه</span>
+              <span className={styles.mediaLabel}>گزارش فعالیت</span>
             </div>
             <div className={styles.featuredCopy}>
               <div className={styles.meta}>
@@ -38,7 +38,7 @@ export function NewsSection() {
               <h3>{featured.title}</h3>
               <p>{featured.description}</p>
               <a href="#news" className={styles.readMore}>
-                ادامه خبر <Icon name="arrow" size={16} />
+                مشاهده گزارش <Icon name="arrow" size={16} />
               </a>
             </div>
           </article>
@@ -58,7 +58,7 @@ export function NewsSection() {
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                   <a href="#news" className={styles.readMore}>
-                    خواندن <Icon name="arrow" size={15} />
+                    مشاهده <Icon name="arrow" size={15} />
                   </a>
                 </div>
               </article>

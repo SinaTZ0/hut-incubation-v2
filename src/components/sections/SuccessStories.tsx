@@ -9,11 +9,11 @@ const stories = [
   {
     company: "مدیار",
     category: "سلامت دیجیتال",
-    quote: "در دوازده هفته از یک فرضیه خام به محصولی رسیدیم که اولین مشتری‌هایش را پیدا کرده بود.",
+    quote: "در دوره آموزشی، روش بررسی مسئله و تدوین نمونه اولیه را به‌صورت مرحله‌ای آموختیم.",
     founder: "سارا احمدی",
-    role: "هم‌بنیان‌گذار و مدیر محصول",
-    metric: "۳.۴×",
-    metricLabel: "رشد درآمد در ۶ ماه",
+    role: "عضو تیم و مسئول توسعه طرح",
+    metric: "۱۲",
+    metricLabel: "هفته فعالیت آموزشی",
     image: mentorSara,
     logo: "M",
     tone: "coral",
@@ -21,11 +21,11 @@ const stories = [
   {
     company: "نورال‌فلو",
     category: "هوش مصنوعی",
-    quote: "کمک واقعی یعنی کسی کنار تیم باشد و سؤال درست را درست وقتی بپرسد که لازم است.",
+    quote: "جلسات مشاوره به ما کمک کرد فرضیه‌های اولیه را با اطلاعات و بازخورد دقیق‌تری بررسی کنیم.",
     founder: "نیما فرهادی",
-    role: "هم‌بنیان‌گذار و CTO",
-    metric: "$1.8M",
-    metricLabel: "جذب سرمایه پس از برنامه",
+    role: "عضو تیم و مسئول فنی",
+    metric: "۱۸۰",
+    metricLabel: "ساعت مشاوره و آموزش",
     image: mentorNima,
     logo: "N",
     tone: "teal",
@@ -40,12 +40,12 @@ export function SuccessStories() {
       <PageContainer>
         <div className={styles.heading}>
           <SectionIntro
-            eyebrow="داستان‌های واقعی"
-            title="ساختن، وقتی اثرش دیده می‌شود معنا پیدا می‌کند."
+            eyebrow="گزارش تجربه تیم‌ها"
+            title="مروری بر تجربه تیم‌های شرکت‌کننده در برنامه‌ها"
             titleId="stories-title"
-            description="از اولین مصاحبه مشتری تا لحظه‌ای که محصول در بازار نفس می‌کشد، کنار تیم‌ها می‌مانیم."
+            description="این بخش، تجربه‌ها و نتایج ثبت‌شده تیم‌ها را در طول دوره‌های آموزشی و مشاوره‌ای مرکز مرور می‌کند."
           />
-          <span className={styles.headingNote}>تجربه‌های ثبت‌شده از جامعه هاب</span>
+          <span className={styles.headingNote}>گزارش‌های منتخب از فعالیت تیم‌ها در مرکز</span>
         </div>
 
         <div className={styles.grid}>

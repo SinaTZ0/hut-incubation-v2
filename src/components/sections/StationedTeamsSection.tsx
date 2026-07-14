@@ -5,7 +5,7 @@ import { PageContainer } from '../ui/PageContainer'
 import { SectionIntro } from '../ui/SectionIntro'
 import styles from './StationedTeamsSection.module.css'
 
-const allTeamsFilter = 'همه تیم‌ها'
+const allTeamsFilter = 'همه حوزه‌ها'
 
 export function StationedTeamsSection() {
   const reduceMotion = useReducedMotion()
@@ -31,14 +31,14 @@ export function StationedTeamsSection() {
           transition={{ duration: reduceMotion ? 0 : 0.72, ease: [0.22, 1, 0.36, 1] }}
         >
           <SectionIntro
-            eyebrow="تیم‌های مستقر"
-            title="همین حالا چه کسانی اینجا می‌سازند؟"
+            eyebrow="تیم‌ها و طرح‌های مستقر"
+            title="معرفی تیم‌ها و طرح‌های فعال در مرکز"
             titleId="stationed-teams-title"
-            description="تیم‌هایی که هر روز در کنار هم محصول می‌سازند، آزمایش می‌کنند و با شبکه منتورها و سرمایه‌گذاران جلو می‌روند."
+            description="در این بخش، تیم‌ها و طرح‌های فعال، حوزه فعالیت و اطلاعات کلی هر مجموعه معرفی می‌شوند."
           />
           <p className={styles.sideNote}>
-            <span>جامعه‌ای در حال رشد</span>
-            از فناوری عمیق تا سلامت و انرژی
+            <span>حوزه‌های فعالیت</span>
+            از فناوری، سلامت و انرژی تا آموزش
           </p>
         </motion.div>
 
@@ -63,7 +63,7 @@ export function StationedTeamsSection() {
           animate={inView ? { opacity: 1, x: 0 } : undefined}
           transition={{ duration: reduceMotion ? 0 : 0.62, delay: reduceMotion ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span>حوزه فعالیت</span>
+          <span>فیلتر بر اساس حوزه فعالیت</span>
           <div className={styles.filters} role="group" aria-label="فیلتر تیم‌ها بر اساس حوزه فعالیت">
             {industries.map((industry) => (
               <button
@@ -112,9 +112,9 @@ export function StationedTeamsSection() {
                   <p>{team.description}</p>
                 </div>
                 <dl className={styles.details}>
-                  <div><dt>اندازه تیم</dt><dd>{team.members} نفر</dd></div>
+                  <div><dt>اعضای تیم</dt><dd>{team.members} نفر</dd></div>
                   <div><dt>سال تأسیس</dt><dd>{team.founded}</dd></div>
-                  <div><dt>مرحله</dt><dd>{team.stage}</dd></div>
+                  <div><dt>مرحله توسعه</dt><dd>{team.stage}</dd></div>
                 </dl>
               </motion.article>
             ))}

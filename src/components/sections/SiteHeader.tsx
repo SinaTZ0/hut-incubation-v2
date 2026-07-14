@@ -16,7 +16,7 @@ function Brand() {
       </span>
       <span>
         <strong>مرکز نوآوری و شتاب‌دهی دانشگاه</strong>
-        <small>از مسئله تا اثر</small>
+        <small>دانشگاه صنعتی همدان</small>
       </span>
     </a>
   );
@@ -37,7 +37,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <ActionLink href="#programs" variant="outline" className={styles.desktopCta}>
-          دوره‌های پذیرش
+          اطلاعات پذیرش
         </ActionLink>
 
         <Drawer.Root open={open} onOpenChange={setOpen} swipeDirection="left">
@@ -52,7 +52,7 @@ export function SiteHeader() {
               <Drawer.Popup className={styles.drawer}>
                 <Drawer.Content>
                   <div className={styles.drawerHead}>
-                    <Drawer.Title>فهرست راهبری</Drawer.Title>
+                    <Drawer.Title>راهنمای بخش‌های سایت</Drawer.Title>
                     <Drawer.Close className={styles.close} aria-label="بستن منو">
                       ×
                     </Drawer.Close>
@@ -70,7 +70,7 @@ export function SiteHeader() {
                     ))}
                   </nav>
                   <ActionLink href="#apply" onClick={() => setOpen(false)}>
-                    ثبت درخواست پذیرش
+                    اطلاعات پذیرش
                   </ActionLink>
                 </Drawer.Content>
               </Drawer.Popup>
