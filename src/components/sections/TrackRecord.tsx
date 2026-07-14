@@ -15,7 +15,7 @@ export function TrackRecord() {
           <div className={styles.title}><span>کارنامه ما</span><h2 id="impact-title">اعتماد، وقتی ماندگار است<br />که <em>قابل اندازه‌گیری</em> باشد.</h2></div>
           <div className={styles.metrics}>
             {impactMetrics.map((metric, index) => (
-              <motion.div key={metric.label} initial={reduceMotion ? false : { opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: reduceMotion ? 0 : index * 0.1 }}>
+              <motion.div key={metric.label} initial={reduceMotion ? false : { opacity: 0, y: 38 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: reduceMotion ? 0 : 0.65, delay: reduceMotion ? 0 : index * 0.16, ease: [0.22, 1, 0.36, 1] }}>
                 <strong>{metric.value}</strong><span>{metric.label}</span>
               </motion.div>
             ))}

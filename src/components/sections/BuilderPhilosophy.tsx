@@ -15,9 +15,10 @@ export function BuilderPhilosophy() {
       <PageContainer>
         <motion.div
           className={styles.statement}
-          initial={reduceMotion ? false : { opacity: 0, y: 30 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
+          transition={{ duration: reduceMotion ? 0 : 0.9, delay: reduceMotion ? 0 : 0.1, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className={styles.statementLead}>
             <span className={styles.eyebrow}>

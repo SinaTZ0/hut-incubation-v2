@@ -27,8 +27,8 @@ export function MediaPlaceholder({
       style={{ '--media-tone': tone } as React.CSSProperties}
       role="img"
       aria-label={label}
-      animate={drift && !reduceMotion ? { scale: [1, 1.018, 1], y: [0, -5, 0] } : undefined}
-      transition={drift && !reduceMotion ? { duration: 9, repeat: Infinity, ease: 'easeInOut' } : undefined}
+      animate={drift && !reduceMotion ? { scale: [1, 1.035, 1], y: [0, -10, 0] } : undefined}
+      transition={drift && !reduceMotion ? { duration: 11, repeat: Infinity, ease: 'easeInOut' } : undefined}
     >
       <span className={styles.grid} aria-hidden="true" />
       {children}

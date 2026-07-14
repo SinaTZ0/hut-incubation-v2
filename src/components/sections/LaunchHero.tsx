@@ -7,7 +7,7 @@ import styles from "./LaunchHero.module.css";
 
 export function LaunchHero() {
   const reduceMotion = useReducedMotion();
-  const reveal = reduceMotion ? {} : { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } };
+  const reveal = reduceMotion ? {} : { initial: { opacity: 0, y: 48 }, animate: { opacity: 1, y: 0 } };
 
   return (
     <section className={styles.hero} id="top">
@@ -16,19 +16,19 @@ export function LaunchHero() {
           className={styles.cursorGrid}
           cellSize={72}
           color="#117b76"
-          radius={190}
-          holdTime={260}
-          fadeDuration={950}
+          radius={220}
+          holdTime={360}
+          fadeDuration={1400}
           lineWidth={1.15}
           maxOpacity={0.42}
           fillOpacity={0.035}
           gridOpacity={0.045}
           cellRadius={3}
-          pulseSpeed={720}
+          pulseSpeed={480}
         />
       )}
       <PageContainer className={styles.layout}>
-        <motion.div className={styles.content} {...reveal} transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}>
+        <motion.div className={styles.content} {...reveal} transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}>
           <span className={styles.kicker}>
             <i /> جایی برای ساختن، نه فقط حرف زدن
           </span>
@@ -56,14 +56,14 @@ export function LaunchHero() {
           <motion.div
             className={styles.imageShadow}
             initial={reduceMotion ? false : { filter: "drop-shadow(17rem 17rem 0rem #117B76)" }}
-            animate={{ filter: "drop-shadow(5rem 3rem 0rem #117B76)" }}
-            transition={{ duration: 1.05, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+            animate={reduceMotion ? undefined : { filter: "drop-shadow(5rem 3rem 0rem #117B76)" }}
+            transition={reduceMotion ? { duration: 0 } : { duration: 1.35, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
           >
             <motion.div
               className={styles.imageFrame}
-              initial={reduceMotion ? false : { x: "-10rem", y: "-10rem" }}
-              animate={{ x: 0, y: 0 }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              initial={reduceMotion ? false : { x: "-14rem", y: "-14rem" }}
+              animate={reduceMotion ? undefined : { x: 0, y: 0 }}
+              transition={reduceMotion ? { duration: 0 } : { duration: 1.25, ease: [0.22, 1, 0.36, 1] }}
             >
               <img src="/Generated Image2.png" alt="فضای کار اشتراکی و تیم‌های در حال ساخت" />
               <span className={styles.visualCaption}>فضای کار بنیان‌گذاران · پردیس نوآوری</span>

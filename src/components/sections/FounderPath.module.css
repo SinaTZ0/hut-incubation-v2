@@ -81,11 +81,11 @@
   min-width: 0;
   padding-inline: 0.5rem;
   text-align: center;
-  transition: transform 180ms ease;
+  transition: transform 320ms cubic-bezier(.22,1,.36,1);
 }
 
 .step:hover {
-  transform: translateY(-0.35rem);
+  transform: translateY(-0.65rem) scale(1.01);
 }
 
 .marker {
@@ -101,13 +101,14 @@
   border-radius: 50%;
   background: var(--paper);
   box-shadow: 0 0 0 0.55rem #efebe1;
-  transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  transition: color 340ms ease, background 340ms ease, box-shadow 340ms ease, transform 340ms cubic-bezier(.22,1,.36,1);
 }
 
 .step:hover .marker {
   color: var(--paper);
   background: var(--turquoise-deep);
   box-shadow: 0 0 0 0.55rem #efebe1, 0 0.5rem 1.5rem color-mix(in srgb, var(--turquoise-deep) 22%, transparent);
+  transform: scale(1.08) rotate(-5deg);
 }
 
 .marker span {

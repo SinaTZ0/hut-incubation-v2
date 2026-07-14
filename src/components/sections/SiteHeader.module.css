@@ -97,7 +97,7 @@
   background: var(--turquoise);
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 180ms ease;
+  transition: transform 300ms cubic-bezier(.22,1,.36,1);
 }
 
 .desktopNav a:hover::after,
@@ -138,7 +138,7 @@
   min-height: 100dvh;
   background: #0c1715;
   opacity: calc(0.48 * (1 - var(--drawer-swipe-progress)));
-  transition: opacity 450ms cubic-bezier(.32, .72, 0, 1);
+  transition: opacity 650ms cubic-bezier(.32, .72, 0, 1);
 }
 
 .backdrop[data-starting-style], .backdrop[data-ending-style] {
@@ -166,7 +166,7 @@
   overflow-y: auto;
   outline: 0;
   transform: translateX(var(--drawer-swipe-movement-x));
-  transition: transform 450ms cubic-bezier(.32, .72, 0, 1);
+  transition: transform 650ms cubic-bezier(.32, .72, 0, 1);
 }
 
 .drawer[data-starting-style], .drawer[data-ending-style] {

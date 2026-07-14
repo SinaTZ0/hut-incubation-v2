@@ -23,11 +23,11 @@
 }
 
 .heading>a svg {
-  transition: transform 180ms ease;
+  transition: transform 300ms cubic-bezier(.22,1,.36,1);
 }
 
 .heading>a:hover svg {
-  transform: scale(1.08);
+  transform: scale(1.16) rotate(-4deg);
 }
 
 .heading>a b {

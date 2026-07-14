@@ -3,7 +3,12 @@ import { ActionLink } from '../ui/ActionLink'
 import { Icon } from '../ui/Icon'
 import { PageContainer } from '../ui/PageContainer'
 import { SectionIntro } from '../ui/SectionIntro'
+import resourceFinance from '../../assets/sections/resource-finance.png'
+import resourceJourney from '../../assets/sections/resource-journey.png'
+import resourceMvp from '../../assets/sections/resource-mvp.png'
 import styles from './ResourceBridge.module.css'
+
+const resourceImages = [resourceFinance, resourceJourney, resourceMvp]
 
 export function ResourceBridge() {
   return (
@@ -16,7 +21,10 @@ export function ResourceBridge() {
         <div className={styles.resources}>
           {resources.map((resource, index) => (
             <article key={resource.title}>
-              <div className={styles.thumb} style={{ '--thumb': resource.tone } as React.CSSProperties} role="img" aria-label={`تصویر جایگزین برای ${resource.title}`}><span>۰{index + 1}</span></div>
+              <div className={styles.thumb} style={{ '--thumb': resource.tone } as React.CSSProperties} role="img" aria-label={`تصویر برای ${resource.title}`}>
+                <img src={resourceImages[index]} alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                <span>۰{index + 1}</span>
+              </div>
               <div className={styles.copy}><span>{resource.type}</span><h3>{resource.title}</h3><p>{resource.description}</p><a href="#resources">مطالعه مطلب <Icon name="arrow" size={16} /></a></div>
             </article>
           ))}

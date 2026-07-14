@@ -1,5 +1,5 @@
-import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
-import { useMemo, useState } from 'react'
+import { AnimatePresence, motion, useInView, useReducedMotion } from 'motion/react'
+import { useMemo, useRef, useState } from 'react'
 import { stationedTeams, stationedTeamStats } from '../../data/content'
 import { PageContainer } from '../ui/PageContainer'
 import { SectionIntro } from '../ui/SectionIntro'
@@ -9,6 +9,8 @@ const allTeamsFilter = 'همه تیم‌ها'
 
 export function StationedTeamsSection() {
   const reduceMotion = useReducedMotion()
+  const sectionRef = useRef<HTMLElement>(null)
+  const inView = useInView(sectionRef, { once: true, amount: 0.2 })
   const [activeIndustry, setActiveIndustry] = useState(allTeamsFilter)
 
   const industries = useMemo(
@@ -20,9 +22,14 @@ export function StationedTeamsSection() {
     : stationedTeams.filter((team) => team.industry === activeIndustry)
 
   return (
-    <section className={styles.section} id="stationed-teams" aria-labelledby="stationed-teams-title">
+    <section className={styles.section} id="stationed-teams" ref={sectionRef} aria-labelledby="stationed-teams-title">
       <PageContainer>
-        <div className={styles.heading}>
+        <motion.div
+          className={styles.heading}
+          initial={reduceMotion ? false : { opacity: 0, y: 36 }}
+          animate={inView ? { opacity: 1, y: 0 } : undefined}
+          transition={{ duration: reduceMotion ? 0 : 0.72, ease: [0.22, 1, 0.36, 1] }}
+        >
           <SectionIntro
             eyebrow="تیم‌های مستقر"
             title="همین حالا چه کسانی اینجا می‌سازند؟"
@@ -33,18 +40,29 @@ export function StationedTeamsSection() {
             <span>جامعه‌ای در حال رشد</span>
             از فناوری عمیق تا سلامت و انرژی
           </p>
-        </div>
+        </motion.div>
 
-        <dl className={styles.stats} aria-label="آمار تیم‌های مستقر">
+        <motion.dl
+          className={styles.stats}
+          aria-label="آمار تیم‌های مستقر"
+          initial={reduceMotion ? false : { opacity: 0, y: 28 }}
+          animate={inView ? { opacity: 1, y: 0 } : undefined}
+          transition={{ duration: reduceMotion ? 0 : 0.68, delay: reduceMotion ? 0 : 0.16, ease: [0.22, 1, 0.36, 1] }}
+        >
           {stationedTeamStats.map((stat) => (
             <div key={stat.label}>
               <dt>{stat.label}</dt>
               <dd>{stat.value}</dd>
             </div>
           ))}
-        </dl>
+        </motion.dl>
 
-        <div className={styles.toolbar}>
+        <motion.div
+          className={styles.toolbar}
+          initial={reduceMotion ? false : { opacity: 0, x: 28 }}
+          animate={inView ? { opacity: 1, x: 0 } : undefined}
+          transition={{ duration: reduceMotion ? 0 : 0.62, delay: reduceMotion ? 0 : 0.3, ease: [0.22, 1, 0.36, 1] }}
+        >
           <span>حوزه فعالیت</span>
           <div className={styles.filters} role="group" aria-label="فیلتر تیم‌ها بر اساس حوزه فعالیت">
             {industries.map((industry) => (
@@ -59,19 +77,26 @@ export function StationedTeamsSection() {
               </button>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <motion.div className={styles.grid} layout={!reduceMotion} aria-live="polite">
-          <AnimatePresence mode="popLayout" initial={false}>
+        <motion.div
+          className={styles.grid}
+          layout={!reduceMotion}
+          aria-live="polite"
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={inView ? { opacity: 1 } : undefined}
+          transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.44 }}
+        >
+          <AnimatePresence mode="popLayout">
             {visibleTeams.map((team, index) => (
               <motion.article
                 className={styles.card}
                 key={team.name}
                 layout={!reduceMotion}
-                initial={reduceMotion ? false : { opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={reduceMotion ? undefined : { opacity: 0, scale: 0.97 }}
-                transition={{ duration: reduceMotion ? 0 : 0.24, delay: reduceMotion ? 0 : index * 0.035 }}
+                initial={reduceMotion ? false : { opacity: 0, y: 42, scale: 0.96 }}
+                animate={inView ? { opacity: 1, y: 0, scale: 1 } : undefined}
+                exit={reduceMotion ? undefined : { opacity: 0, scale: 0.94, y: 20 }}
+                transition={{ duration: reduceMotion ? 0 : 0.68, delay: reduceMotion ? 0 : 0.5 + index * 0.14, ease: [0.22, 1, 0.36, 1] }}
                 style={{ '--team-tone': team.tone } as React.CSSProperties}
               >
                 <div className={styles.cardTop}>
