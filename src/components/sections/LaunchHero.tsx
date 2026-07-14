@@ -52,7 +52,7 @@ export function LaunchHero() {
         <div className={styles.visual}>
           <motion.div
             className={styles.imageShadow}
-            initial={reduceMotion ? false : { filter: "drop-shadow(17rem 17rem 0rem #117B76)" }}
+            initial={reduceMotion ? false : { filter: "drop-shadow(17rem 17rem 0rem #117B76)", opacity: 0 }}
             animate={
               reduceMotion
                 ? undefined
@@ -62,6 +62,7 @@ export function LaunchHero() {
                       "drop-shadow(5.8rem 3.9rem 0rem #117B76)",
                       "drop-shadow(5rem 3rem 0rem #117B76)",
                     ],
+                    opacity: [0, 0.92, 1],
                   }
             }
             transition={
@@ -69,7 +70,7 @@ export function LaunchHero() {
                 ? { duration: 0 }
                 : {
                     duration: 1.5,
-                    delay: 0.12,
+                    delay: 0.27,
                     times: [0, 0.67, 1],
                     ease: [
                       [0.12, 0.8, 0.2, 1],
@@ -89,6 +90,7 @@ export function LaunchHero() {
                   ? { duration: 0 }
                   : {
                       duration: 1.5,
+                      delay: 0.15,
                       times: [0, 0.67, 1],
                       ease: [
                         [0.12, 0.8, 0.2, 1],
@@ -110,6 +112,7 @@ export function LaunchHero() {
                     ? { duration: 0 }
                     : {
                         duration: 1.5,
+                        delay: 0.15,
                         times: [0, 0.67, 1],
                         ease: [
                           [0.12, 0.8, 0.2, 1],
