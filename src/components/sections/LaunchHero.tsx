@@ -62,7 +62,7 @@ export function LaunchHero() {
               animate={reduceMotion ? undefined : { x: 0, y: 0 }}
               transition={reduceMotion ? { duration: 0 } : { duration: 1.25, ease: [0.22, 1, 0.36, 1] }}
             >
-              <img src="/Generated Image2.png" alt="فضای کار اشتراکی و تیم‌های در حال ساخت" />
+              <img src="/Generated Image2.webp" alt="فضای کار اشتراکی و تیم‌های در حال ساخت" />
               <span className={styles.visualCaption}>فضای کار بنیان‌گذاران · پردیس نوآوری</span>
             </motion.div>
           </motion.div>

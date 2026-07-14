@@ -31,7 +31,7 @@ export function LabShowcase() {
             label="اتاق ایده‌پردازی و وایت‌بردهای در حال کار"
             drift
           >
-            <img className={styles.mediaImage} src="/Generated whiteboard.png" alt="" aria-hidden="true" />
+            <img className={styles.mediaImage} src="/Generated whiteboard.webp" alt="" aria-hidden="true" />
           </MediaPlaceholder>
           <MediaPlaceholder
             className={styles.workshop}
@@ -39,7 +39,7 @@ export function LabShowcase() {
             tone="#725f4e"
             label="میزهای نمونه‌سازی و کارگاه محصول"
           >
-            <img className={styles.mediaImage} src="/Generated workshop.png" alt="" aria-hidden="true" />
+            <img className={styles.mediaImage} src="/Generated workshop.webp" alt="" aria-hidden="true" />
           </MediaPlaceholder>
           <MediaPlaceholder
             className={styles.cowork}
@@ -48,7 +48,7 @@ export function LabShowcase() {
             label="فضای کار اشتراکی تیم‌ها"
             drift
           >
-            <img className={styles.mediaImage} src="/Generated cowork.png" alt="" aria-hidden="true" />
+            <img className={styles.mediaImage} src="/Generated cowork.webp" alt="" aria-hidden="true" />
           </MediaPlaceholder>
           <MediaPlaceholder
             className={styles.pod}
@@ -56,7 +56,7 @@ export function LabShowcase() {
             tone="#3f5753"
             label="اتاق جلسه شیشه‌ای برای گفت‌وگوهای تیمی"
           >
-            <img className={styles.mediaImage} src="/Generated space.png" alt="" aria-hidden="true" />
+            <img className={styles.mediaImage} src="/Generated space.webp" alt="" aria-hidden="true" />
           </MediaPlaceholder>
 
           <blockquote className={styles.quote}>
