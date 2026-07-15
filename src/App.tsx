@@ -16,12 +16,30 @@ import { TrackRecord } from "./components/sections/TrackRecord";
 import styles from "./App.module.css";
 
 function App() {
+  const [path, setPath] = useState(() => window.location.pathname);
+
+  useEffect(() => {
+    const handlePopState = () => setPath(window.location.pathname);
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  const navigate = useCallback((nextPath: string) => {
+    if (window.location.pathname !== nextPath) window.history.pushState({}, "", nextPath);
+    setPath(nextPath);
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, []);
+
+  if (path === "/admin" || path === "/admin/") {
+    return <AdminPage onNavigateHome={() => navigate("/")} />;
+  }
+
   return (
     <div className={styles.app}>
       <a className={styles.skipLink} href="#main">
         پرش به محتوای اصلی
       </a>
-      <SiteHeader />
+      <SiteHeader onNavigateAdmin={() => navigate("/admin")} />
       <main id="main">
         <LaunchHero />
         <EventsSection />
@@ -43,3 +61,5 @@ function App() {
 }
 
 export default App;
+import { useCallback, useEffect, useState } from "react";
+import { AdminPage } from "./components/admin/AdminPage";

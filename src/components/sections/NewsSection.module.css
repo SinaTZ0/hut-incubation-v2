@@ -32,3 +32,4 @@
 .updateCopy .readMore { margin-block-start: auto; }
 @media (max-width: 900px) { .newsGrid { grid-template-columns: 1fr; }.featured { min-height: 0; }.update { grid-template-columns: 11rem 1fr; } }
 @media (max-width: 650px) { .heading { align-items: flex-start; flex-direction: column; }.featuredCopy { padding: 1.35rem; }.update { grid-template-columns: 7rem 1fr; min-height: 13.5rem; }.updateCopy { padding: 1.05rem; }.updateCopy h3 { font-size: .82rem; }.updateCopy p { font-size: .68rem; }.meta { align-items: flex-start; flex-direction: column; gap: .2rem; } }
+.empty { margin: 0; padding: 3rem; color: var(--muted); border: 1px dashed var(--line-strong); border-radius: 1.35rem; background: rgba(255,255,255,.5); text-align: center; }

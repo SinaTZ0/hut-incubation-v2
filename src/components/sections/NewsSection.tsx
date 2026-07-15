@@ -1,4 +1,4 @@
-import { newsItems } from '../../data/content'
+import { useContentStore } from '../../context/useContentStore'
 import { ActionLink } from '../ui/ActionLink'
 import { Icon } from '../ui/Icon'
 import { PageContainer } from '../ui/PageContainer'
@@ -6,7 +6,8 @@ import { SectionIntro } from '../ui/SectionIntro'
 import styles from './NewsSection.module.css'
 
 export function NewsSection() {
-  const [featured, ...updates] = newsItems
+  const { newsItems } = useContentStore()
+  const [featured, ...updates] = newsItems.slice(0, 3)
 
   return (
     <section className={styles.section} id="news" aria-labelledby="news-title">
@@ -23,7 +24,7 @@ export function NewsSection() {
           </ActionLink>
         </div>
 
-        <div className={styles.newsGrid}>
+        {featured ? <div className={styles.newsGrid}>
           <article className={styles.featured}>
             <div className={`${styles.featuredMedia} ${styles[featured.tone]}`}>
               <img src={featured.image} alt="" aria-hidden="true" loading="lazy" decoding="async" />
@@ -45,7 +46,7 @@ export function NewsSection() {
 
           <div className={styles.updateList}>
             {updates.map((item, index) => (
-              <article className={styles.update} key={item.title}>
+              <article className={styles.update} key={item.id}>
                 <div className={`${styles.updateMedia} ${styles[item.tone]}`}>
                   <img src={item.image} alt="" aria-hidden="true" loading="lazy" decoding="async" />
                   <span>۰{index + 2}</span>
@@ -64,7 +65,7 @@ export function NewsSection() {
               </article>
             ))}
           </div>
-        </div>
+        </div> : <p className={styles.empty}>در حال حاضر خبری برای نمایش وجود ندارد.</p>}
       </PageContainer>
     </section>
   )

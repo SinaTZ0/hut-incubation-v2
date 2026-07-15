@@ -6,6 +6,10 @@ import { Icon } from "../ui/Icon";
 import { PageContainer } from "../ui/PageContainer";
 import styles from "./SiteHeader.module.css";
 
+type SiteHeaderProps = {
+  onNavigateAdmin: () => void;
+};
+
 function Brand() {
   return (
     <a className={styles.brand} href="#top" aria-label="مرکز نوآوری و شتاب‌دهی دانشگاه؛ صفحه اصلی">
@@ -22,7 +26,7 @@ function Brand() {
   );
 }
 
-export function SiteHeader() {
+export function SiteHeader({ onNavigateAdmin }: SiteHeaderProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -36,9 +40,14 @@ export function SiteHeader() {
             </a>
           ))}
         </nav>
-        <ActionLink href="#programs" variant="outline" className={styles.desktopCta}>
-          اطلاعات پذیرش
-        </ActionLink>
+        <div className={styles.desktopActions}>
+          <ActionLink href="#programs" variant="outline" className={styles.desktopCta}>
+            اطلاعات پذیرش
+          </ActionLink>
+          <ActionLink href="/admin" className={styles.desktopCta} onClick={(event) => { event.preventDefault(); onNavigateAdmin() }}>
+            مدیریت محتوا
+          </ActionLink>
+        </div>
 
         <Drawer.Root open={open} onOpenChange={setOpen} swipeDirection="left">
           <Drawer.Trigger className={styles.menuButton} aria-label="باز کردن منو">
@@ -69,9 +78,14 @@ export function SiteHeader() {
                       </a>
                     ))}
                   </nav>
-                  <ActionLink href="#apply" onClick={() => setOpen(false)}>
-                    اطلاعات پذیرش
-                  </ActionLink>
+                  <div className={styles.drawerActions}>
+                    <ActionLink href="#programs" variant="outline" onClick={() => setOpen(false)}>
+                      اطلاعات پذیرش
+                    </ActionLink>
+                    <ActionLink href="/admin" onClick={(event) => { event.preventDefault(); setOpen(false); onNavigateAdmin() }}>
+                      مدیریت محتوا
+                    </ActionLink>
+                  </div>
                 </Drawer.Content>
               </Drawer.Popup>
             </Drawer.Viewport>

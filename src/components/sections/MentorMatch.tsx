@@ -1,17 +1,14 @@
 import { motion, useReducedMotion } from "motion/react";
-import { mentors } from "../../data/content";
+import { useContentStore } from "../../context/useContentStore";
 import { ActionLink } from "../ui/ActionLink";
 import { Icon } from "../ui/Icon";
 import { PageContainer } from "../ui/PageContainer";
 import { SectionIntro } from "../ui/SectionIntro";
-import mentorAli from "../../assets/sections/mentor-ali.webp";
-import mentorNima from "../../assets/sections/mentor-nima.webp";
-import mentorSara from "../../assets/sections/mentor-sara.webp";
 import styles from "./MentorMatch.module.css";
 
-const mentorImages = [mentorAli, mentorSara, mentorNima];
-
 export function MentorMatch() {
+  const { mentors } = useContentStore();
+  const latestMentors = mentors.slice(0, 3);
   const reduceMotion = useReducedMotion();
   return (
     <section className={styles.section} id="mentors">
@@ -27,9 +24,9 @@ export function MentorMatch() {
           </ActionLink>
         </div>
         <div className={styles.list}>
-          {mentors.map((mentor, index) => (
+          {latestMentors.map((mentor, index) => (
             <motion.article
-              key={mentor.name}
+              key={mentor.id}
               initial={reduceMotion ? false : { opacity: 0, y: 44 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.35 }}
@@ -45,7 +42,7 @@ export function MentorMatch() {
                 role="img"
                 aria-label={`تصویر ${mentor.name}`}
               >
-                <img src={mentorImages[index]} alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                <img src={mentor.image} alt="" aria-hidden="true" loading="lazy" decoding="async" />
               </div>
               <div className={styles.info}>
                 <span className={styles.index}>۰{index + 1}</span>
@@ -64,6 +61,7 @@ export function MentorMatch() {
               </div>
             </motion.article>
           ))}
+          {latestMentors.length === 0 && <p className={styles.empty}>در حال حاضر مشاوری برای نمایش وجود ندارد.</p>}
         </div>
       </PageContainer>
     </section>

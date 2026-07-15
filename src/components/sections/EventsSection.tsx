@@ -1,4 +1,4 @@
-import { events } from '../../data/content'
+import { useContentStore } from '../../context/useContentStore'
 import { ActionLink } from '../ui/ActionLink'
 import { Icon } from '../ui/Icon'
 import { PageContainer } from '../ui/PageContainer'
@@ -6,7 +6,8 @@ import { SectionIntro } from '../ui/SectionIntro'
 import styles from './EventsSection.module.css'
 
 export function EventsSection() {
-  const [featured, ...upcoming] = events
+  const { events } = useContentStore()
+  const [featured, ...upcoming] = events.slice(0, 3)
 
   return (
     <section className={styles.section} id="events" aria-labelledby="events-title">
@@ -24,7 +25,7 @@ export function EventsSection() {
           </ActionLink>
         </div>
 
-        <div className={styles.eventsGrid}>
+        {featured ? <div className={styles.eventsGrid}>
           <article className={styles.featured}>
             <div className={styles.featuredTop}>
               <div className={styles.dateCard} aria-label={featured.dateLabel}>
@@ -52,7 +53,7 @@ export function EventsSection() {
           <div className={styles.upcoming}>
             <div className={styles.upcomingLabel}>رویدادهای پیش‌رو</div>
             {upcoming.map((event) => (
-              <article className={styles.event} key={event.title}>
+              <article className={styles.event} key={event.id}>
                 <div className={styles.smallDate} aria-label={event.dateLabel}>
                   <strong>{event.day}</strong>
                   <span>{event.month}</span>
@@ -72,7 +73,7 @@ export function EventsSection() {
               </article>
             ))}
           </div>
-        </div>
+        </div> : <p className={styles.empty}>در حال حاضر رویدادی برای نمایش وجود ندارد.</p>}
       </PageContainer>
     </section>
   )

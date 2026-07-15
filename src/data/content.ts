@@ -1,3 +1,7 @@
+import mentorAli from '../assets/sections/mentor-ali.webp'
+import mentorNima from '../assets/sections/mentor-nima.webp'
+import mentorSara from '../assets/sections/mentor-sara.webp'
+
 export type ProgramTrack = {
   id: string
   title: string
@@ -14,12 +18,14 @@ export type JourneyStep = {
 }
 
 export type Mentor = {
+  id: string
   name: string
   role: string
   focus: string
   style: string
   tone: string
   initials: string
+  image: string
 }
 
 export type ImpactMetric = {
@@ -35,6 +41,7 @@ export type Resource = {
 }
 
 export type NewsItem = {
+  id: string
   category: string
   date: string
   title: string
@@ -44,6 +51,7 @@ export type NewsItem = {
 }
 
 export type EventItem = {
+  id: string
   type: string
   day: string
   month: string
@@ -56,6 +64,7 @@ export type EventItem = {
 }
 
 export type StationedTeam = {
+  id: string
   name: string
   logo: 'orbit' | 'leaf' | 'pulse' | 'quantum' | 'portal' | 'sprout'
   industry: string
@@ -150,28 +159,34 @@ export const journeySteps: JourneyStep[] = [
 
 export const mentors: Mentor[] = [
   {
+    id: 'mentor-ali-mohammadi',
     name: 'مهندس علی محمدی',
     role: 'متخصص فناوری و توسعه محصول',
     focus: 'فناوری عمیق',
     style: 'مشاور اجرایی',
     tone: '#6f7f73',
     initials: 'ع‌م',
+    image: mentorAli,
   },
   {
+    id: 'mentor-sara-rostami',
     name: 'مهندس سارا رستمی',
     role: 'متخصص سرمایه‌گذاری و برنامه‌ریزی',
     focus: 'سرمایه‌گذاری',
     style: 'مشاور برنامه‌ریزی و تأمین مالی',
     tone: '#8a786f',
     initials: 'س‌ر',
+    image: mentorSara,
   },
   {
+    id: 'mentor-nima-farhadi',
     name: 'دکتر نیما فرهادی',
     role: 'متخصص محصول و راهبرد',
     focus: 'محصول و رشد',
     style: 'مشاور محصول',
     tone: '#65737d',
     initials: 'ن‌ف',
+    image: mentorNima,
   },
 ]
 
@@ -191,6 +206,7 @@ export const stationedTeamStats: StationedTeamStat[] = [
 
 export const stationedTeams: StationedTeam[] = [
   {
+    id: 'team-neural-flow',
     name: 'نورال‌فلو AI',
     logo: 'orbit',
     industry: 'هوش مصنوعی',
@@ -201,6 +217,7 @@ export const stationedTeams: StationedTeam[] = [
     tone: '#a59ab8',
   },
   {
+    id: 'team-green-grid',
     name: 'گرین‌گرید انرژی',
     logo: 'leaf',
     industry: 'فناوری پاک',
@@ -211,6 +228,7 @@ export const stationedTeams: StationedTeam[] = [
     tone: '#8fb8a5',
   },
   {
+    id: 'team-medsync',
     name: 'مدسینک سلامت',
     logo: 'pulse',
     industry: 'سلامت دیجیتال',
@@ -221,6 +239,7 @@ export const stationedTeams: StationedTeam[] = [
     tone: '#c9a3a0',
   },
   {
+    id: 'team-quantum-leap',
     name: 'کوانتوم‌لیپ لبز',
     logo: 'quantum',
     industry: 'محاسبات کوانتومی',
@@ -231,6 +250,7 @@ export const stationedTeams: StationedTeam[] = [
     tone: '#87b8bd',
   },
   {
+    id: 'team-eduverse',
     name: 'ادوورس XR',
     logo: 'portal',
     industry: 'فناوری آموزش',
@@ -241,6 +261,7 @@ export const stationedTeams: StationedTeam[] = [
     tone: '#d1af7e',
   },
   {
+    id: 'team-agribot',
     name: 'آگری‌بات سیستمز',
     logo: 'sprout',
     industry: 'فناوری کشاورزی',
@@ -275,6 +296,7 @@ export const resources: Resource[] = [
 
 export const newsItems: NewsItem[] = [
   {
+    id: 'news-spring-presentations',
     category: 'گزارش فعالیت',
     date: '۲۵ تیر ۱۴۰۵',
     title: 'ارائه نتایج فعالیت سه تیم دانشجویی در دوره بهاره',
@@ -283,6 +305,7 @@ export const newsItems: NewsItem[] = [
     tone: 'teal',
   },
   {
+    id: 'news-summer-registration',
     category: 'اطلاعیه',
     date: '۱۸ تیر ۱۴۰۵',
     title: 'ثبت‌نام دوره آموزشی تابستان ۱۴۰۵ آغاز شد',
@@ -291,6 +314,7 @@ export const newsItems: NewsItem[] = [
     tone: 'coral',
   },
   {
+    id: 'news-medyar-report',
     category: 'گزارش تجربه تیم‌ها',
     date: '۱۰ تیر ۱۴۰۵',
     title: 'گزارش تیم «مدیار» از نخستین مرحله بررسی مسئله',
@@ -302,6 +326,7 @@ export const newsItems: NewsItem[] = [
 
 export const events: EventItem[] = [
   {
+    id: 'event-problem-validation',
     type: 'کارگاه آموزشی',
     day: '۲۸',
     month: 'تیر',
@@ -313,6 +338,7 @@ export const events: EventItem[] = [
     audience: 'ویژه دانشجویان و دانش‌آموختگان',
   },
   {
+    id: 'event-university-project',
     type: 'نشست تخصصی',
     day: '۰۴',
     month: 'مرداد',
@@ -324,6 +350,7 @@ export const events: EventItem[] = [
     audience: 'برای دانشجویان و علاقه‌مندان',
   },
   {
+    id: 'event-center-introduction',
     type: 'نشست معرفی مرکز',
     day: '۱۲',
     month: 'مرداد',

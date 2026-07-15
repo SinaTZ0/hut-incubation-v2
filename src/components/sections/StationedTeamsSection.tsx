@@ -1,6 +1,7 @@
 import { AnimatePresence, motion, useInView, useReducedMotion } from 'motion/react'
 import { useMemo, useRef, useState } from 'react'
-import { stationedTeams, stationedTeamStats } from '../../data/content'
+import { stationedTeamStats } from '../../data/content'
+import { useContentStore } from '../../context/useContentStore'
 import { PageContainer } from '../ui/PageContainer'
 import { SectionIntro } from '../ui/SectionIntro'
 import styles from './StationedTeamsSection.module.css'
@@ -8,18 +9,21 @@ import styles from './StationedTeamsSection.module.css'
 const allTeamsFilter = 'همه حوزه‌ها'
 
 export function StationedTeamsSection() {
+  const { stationedTeams } = useContentStore()
+  const latestTeams = useMemo(() => stationedTeams.slice(0, 6), [stationedTeams])
   const reduceMotion = useReducedMotion()
   const sectionRef = useRef<HTMLElement>(null)
   const inView = useInView(sectionRef, { once: true, amount: 0.2 })
   const [activeIndustry, setActiveIndustry] = useState(allTeamsFilter)
 
   const industries = useMemo(
-    () => [allTeamsFilter, ...new Set(stationedTeams.map((team) => team.industry))],
-    [],
+    () => [allTeamsFilter, ...new Set(latestTeams.map((team) => team.industry))],
+    [latestTeams],
   )
-  const visibleTeams = activeIndustry === allTeamsFilter
-    ? stationedTeams
-    : stationedTeams.filter((team) => team.industry === activeIndustry)
+  const effectiveIndustry = industries.includes(activeIndustry) ? activeIndustry : allTeamsFilter
+  const visibleTeams = effectiveIndustry === allTeamsFilter
+    ? latestTeams
+    : latestTeams.filter((team) => team.industry === effectiveIndustry)
 
   return (
     <section className={styles.section} id="stationed-teams" ref={sectionRef} aria-labelledby="stationed-teams-title">
@@ -67,10 +71,10 @@ export function StationedTeamsSection() {
           <div className={styles.filters} role="group" aria-label="فیلتر تیم‌ها بر اساس حوزه فعالیت">
             {industries.map((industry) => (
               <button
-                className={activeIndustry === industry ? styles.activeFilter : ''}
+                className={effectiveIndustry === industry ? styles.activeFilter : ''}
                 type="button"
                 key={industry}
-                aria-pressed={activeIndustry === industry}
+                aria-pressed={effectiveIndustry === industry}
                 onClick={() => setActiveIndustry(industry)}
               >
                 {industry}
@@ -91,7 +95,7 @@ export function StationedTeamsSection() {
             {visibleTeams.map((team, index) => (
               <motion.article
                 className={styles.card}
-                key={team.name}
+                key={team.id}
                 layout={!reduceMotion}
                 initial={reduceMotion ? false : { opacity: 0, y: 42, scale: 0.96 }}
                 animate={inView ? { opacity: 1, y: 0, scale: 1 } : undefined}
@@ -119,6 +123,7 @@ export function StationedTeamsSection() {
               </motion.article>
             ))}
           </AnimatePresence>
+          {visibleTeams.length === 0 && <p className={styles.empty}>در حال حاضر تیمی برای نمایش وجود ندارد.</p>}
         </motion.div>
       </PageContainer>
     </section>
